@@ -6,9 +6,9 @@ namespace SandFPS
     [Library]
 	public partial class WalkController : BasePlayerController
     {
-        [Net] public float SprintSpeed { get; set; } = 320.0f;
-        [Net] public float WalkSpeed { get; set; } = 150.0f;
-        [Net] public float DefaultSpeed { get; set; } = 190.0f;
+        [Net] public float SprintSpeed { get; set; } = 220.0f;
+        [Net] public float WalkSpeed { get; set; } = 70.0f;
+        [Net] public float DefaultSpeed { get; set; } = 130.0f;
         [Net] public float Acceleration { get; set; } = 10.0f;
         [Net] public float AirAcceleration { get; set; } = 50.0f;
         [Net] public float FallSoundZ { get; set; } = -30.0f;
@@ -27,7 +27,9 @@ namespace SandFPS
         [Net] public float Gravity { get; set; } = 800.0f;
         [Net] public float AirControl { get; set; } = 30.0f;
         public bool Swimming { get; set; } = false;
-        [Net] public bool AutoJump { get; set; } = false;
+
+		[ConVar.Server("sv_autojump", Help = "The player keep jumping even when holding jump")]
+        public static bool AutoJump { get; set; } = false;
 
         public Duck Duck;
         public Unstuck Unstuck;
